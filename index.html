@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="./vue.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        {{ mensagem }} <br>
+        {{ valorTotal }} <br>
+        {{ logado }} <br>
+        {{ hobbies[2] }} <br>
+        Cadastro: {{ cadastro.nome }}, {{ cadastro.endereco }}, {{ cadastro.cursos[0].descricao }} <br>
+        {{ somar() }} <br>
+        {{ subtrair() }}
+    </div>
+    <script>
+        const vm = new Vue({
+            el: '#app',
+            data: {
+                mensagem: 'Teste vue',
+                valorTotal: 150.40,
+                logado: false,
+            hobbies: [
+                 'Dormir',
+                 'Estudar',
+                 'Treinar na academia',
+            ],
+            cadastro: {
+                nome: 'Carlos Erig',
+                endereco: 'Rua Castelo Branco, 499',
+                cursos: [
+                    {
+                        descricao: 'Laravel',
+                        horas: '50'
+                    },
+                    {
+                        descricao: 'Academia do Flutter',
+                        horas: '60'
+                    }
+                ]
+            },
+            somar() {
+                return 4+2;
+            },
+            subtrair: function() {
+                return 4-2;
+            }    
+            }
+        })
+    </script>
+</body>
+</html>
